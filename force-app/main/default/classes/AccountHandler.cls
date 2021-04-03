@@ -13,4 +13,11 @@ public with sharing class AccountHandler {
             insert opps;
         }
     }
+
+    public static void CreateAccounts(List<Account> accts){
+        for(Account a: accts){
+            a.ShippingAddress.state = a.BillingAddress.state;
+        }
+
+    }
 }

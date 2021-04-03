@@ -3,4 +3,7 @@ trigger AccountTrigger on Account (before insert, before update, before
     if (Trigger.isAfter && Trigger.isInsert) {
         AccountHandler.CreateNewOpportunity(Trigger.New);
     }
+    if(Trigger.isBefore && Trigger.isInsert){
+        AccountHandler.CreateAccounts(Trigger.new);
+    }
 }
